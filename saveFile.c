@@ -1,6 +1,9 @@
 /*
 Programme qui stocke le contenu d'fichier dans une variable (ici tab).
    ' '    qui reçoit un paramètre : le nom du fichier (avec le chemin).
+En l'essayant sur des fichiers qui commencent à être volumineux, il plante. 
+Par exemple, avec knownGene.txt, ça marche si on ne garde que les 558 premières lignes, mais au dessus, ça plante.
+Ça à l'air d'être parce que j'atteins un nombre de caractères seuil.
 */
 
 #include <stdio.h>

@@ -7,11 +7,11 @@ Programme qui stocke le contenu d'fichier dans une variable (ici tab).
 #include <stdlib.h>
 #include <string.h>
 
-#define TAILLE_MAX 10000
+#define TAILLE_MAX 100000
 
 int main(int argc,char* argv[]) {
 	
-	char** tab=(char**)malloc((10000)*sizeof(char*));  //Contiendra l'ensemble des lignes.
+	char** tab=(char**)malloc((100000)*sizeof(char*));  //Contiendra l'ensemble des lignes.
 	char ** temp=tab;
 	char* parcours=(char*)malloc((TAILLE_MAX)*sizeof(char)); //Contiendra le contenu d'une ligne à la fois.
 	int j=0;
@@ -44,7 +44,7 @@ int main(int argc,char* argv[]) {
 		j++;
   	}
   	*/
-  	
+  	printf("chargement effectué.\n");
   	free(tab);
   	free(parcours);
 	fclose(fichier);

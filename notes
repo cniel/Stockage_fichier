@@ -1,0 +1,44 @@
+3'UTR : la plupart des séquences cibles des miRNAs. Parfois en 5'UTR mais ce sera pour du clivage (et pas juste de la répression).
+1 précusreur (MI000...) -> plsrs miRNA matures (MITMAT000...).
+Revient dans plusieurs articles : Beaucoup de faux-positifs, et ça coûte cher à verifier expérimentallement.
+target : un autre identifiant miRNA ? (que l'on retrouve comme cible de plusieurs miRNA : exemple hsa-miR-29c-3p).
+Since some miRNAs are expressed at a low level and the expression of many miRNAs has spatio-temporal specificity, it is difficult to find them through cDNA cloning. 
+However, computational approaches can predict the miRNAs specifically expressed or with low abundance, which is complement to cDNA cloning.
+The degree of specificity conferred by the seed region is comparable to that of the DNA sites recognized by transcription factors (2010 june, Genetic variations in 
+miRNA networks).
+La région 3'UTR revient vraiment beaucoup, si ce n'est pas exclusivement.
+
+Description de la production de miRNA (june 2010 Genetic variations in miRNA networks):
+RNA polymerase II (Pol II) produces a 500–3,000 nucleotide transcript, called the primary microRNA (miRNA), or pri-miRNA, that is then cropped to form a pre-miRNA hairpin 
+	by a multi-protein complex that includes DROSHA (~60–100 nucleotides) (a simplified view is shown here). This double-stranded hairpin structure is exported 
+	from the nucleus by RAN GTPase and exportin 5 (XPO5)112. Finally, the pre-miRNA is cleaved by DICER1 to produce two miRNA strands, a mature miRNA sequence, 
+	approximately 20 nucleotides in length, and its short-lived complementary sequence, which is denoted miR* and sometimes 
+	called the passenger strand or 3p strand159. The thermodynamic stability of the miRNA duplex termini and the identity of the nucleotides 
+	in the 3′ overhang determines which of the strands is incorporated into the RNA-inducing silencing complex (RISC)160. In some cases,
+	in which both the lead and passenger strands have a similar thermodynamic stability, both strands will be loaded.
+	The single stranded miRNA is incorporated into RISC, which then targets it to the target 3′ untranslated region mRNA sequence to 
+	facilitate repression and cleavage. AA, poly A tail; m7G, 7-methylguanosine cap; ORF, open reading frame.
+
+Computational approaches were categorized into five classes: 
+(1) homology search; 
+(2) prediction based on comparative genomics; 
+(3) scoring candidates using the sequence and structure characteristics; 
+(4) prediction combined with targets;
+(5) prediction with machine learning.
+
+Famille de miRNA : ex : mir-133 -> contient 133-a , 133-b, et le détail des gènes targets. (vu sur mirTarBase).
+
+2007 : 533 miRNA in human genome dont 60% conservés chez la souris.
+2007 : derniere mise à jour de miRGen database (474 miRNA chez l'homme).
+2010 : derniere mise à jour de microRNA.org (1100 miRNA chez l'homme).
+2012 : derniere mise à jour de mirDB (1919 miRNA chez l'homme).
+2012 (novembre) : derniere mise à jour de miTarBase : 317 miRNA validés expérimentalement chez l'homme.
+2010 (juin) : 721 human miRNAs sur miRBase.
+2013 : mirTarHunter : plus de 50% des gènes codant pour des protéines sont prédits comme étant régulés par les miRNA.
+		      potentiellement, chaque miRNA peut s'hybrider à 300-400 ARNm différents.
+	              Environ 1000 miRNAs chez l'homme.
+		      mirTarHunter : computational approch pour prédire les target (vérifié sur des validated targets (meilleur score).) : http://203.230.194.162/~kbkim
+
+2012 (nov)
+PicTar uses techniques like seed match, free energy calculation and species conservation. Surprisingly, its false positive rate has been estimated to be 30%.
+

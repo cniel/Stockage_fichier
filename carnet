@@ -1,0 +1,34 @@
+	jour1
+Découverte de miRBase (téléchargement des séquences, je regarde les descriptions).
+Recherche de redondance parmi les 2042 mimat présents dans la base (alors que je m'attends à en trouver seulement 500 ou 600).
+Début de biblio très généraliste.
+
+voir d'autres outils que miRBase -> recherche croisée.
+Avancer sur la biblio!
+
+
+	jour2
+Biblio
+
+	jour3
+Nature des identifiants miRNA et reflexion pour récupération efficace des données. 
+Multi-alignement sur miR-133 et mir-1 afin de valider la conservation livresque des miRNA.
+	-> traitement awk sur 2 lignes simultanées (dû au format FASTA) pour récupérer les séquences qui nous intéressent à partir de mature.fa : contenant les FASTA des miRNAs de toutes les espèces.
+	-> apprentissage de la commande : curl ftp:[adresse d'un lien à télécharger].
+Voir jusqu'où vont les homologies en terme de phylonégie : un miRNA cardiaque chez la plante ? A quel niveau taxonomique sont-ils apparus ?
+	-> pas de miRNA cardiaque chez la plante. Le plus loin en phylogénétique : mollusque.
+Pression de selection : miRNA seul ? ou miRNA + cible ?
+	-> les cibles ne semblent pas spécialement conservées (à part quelques unes : CASP9 pour miR-133).
+
+Biblio
+
+	jour4
+Réunion / présentation biblio. 
+Précisions sur l'axe du sujet. Ce qui a été fait par les master2.
+On travaille avant tout sur SCN5A (gène impliqué dans l'hypertension). 
+	1: On recherche si SCN5A contient des séquences qui peuvent être productrices de miRNA. On fait ça sur la totalité du gène et pas seulement dans les introns. Avec l'epissage alternatif, un exon "déchet" peut potentiellement aussi produire un miRNA.
+Regarder directement dans les données de miRBase si le site de production d'un miRNA est sur SCN5A.
+Récupérer la séquence de SCN5A.
+Blaster avec tous les miRNA en regardant si l'hybridation totale (ou presque) existe (=> clivage).
+
+	2: On regarde par la même occasion si SCN5A a des séquences target avec un bon ratio d'hybridation.

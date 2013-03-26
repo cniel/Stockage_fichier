@@ -1,0 +1,21 @@
+//Téléchargement de la séquence scn5a.fa (ncbi).
+//Contient 1 séquence produisant 1 miRNA (strictement) ? On regarde si les bornes du gène contiennent les bornes d'un miRNA.
+//Téléchargement sur miRBase de detailEntrees.txt (chromosome, début, fin, ID, accession number).
+//Vérification que ça marche avec un pour qui on est sûr que ça va marcher : contrôle positif.
+cat detailEntrees.txt | grep "chr3" | egrep "miRNA[^_]" | awk 'BEGIN{FS="\t";} $4>=10436183 && $5<=10436204 {printf("%s",$0);}'
+//Retourne bien le miRNA attendu : OK -> on passe au cas qui nous intéresse : les bornes du gène sont données sur ncbi.
+cat detailEntrees.txt | grep "chr3" | egrep "miRNA[^_]" | awk 'BEGIN{FS="\t";} $4>=38589553 && $5<=38691164 {printf("%s",$0);}'
+
+L'intervalle du gène [38589553 ; 38691164] ne contient visiblement aucun miRNA.
+
+//On procède au Blast.
+//CONTRÔLE POSITIF : avec mir-133b, sur le chr6, [52013786 ; 52013807]. 
+//On prend la séquence qui englobe ce miRNA : [52013000 ; 52014000] (récupéré sur Ensembl (dans le menu de gauche "Export data")) : autourMir133b.fa
+cat autourMir133b | blastn -word_size 4 -db sapiens.fa | more 
+//35 hits : pas top pour un contrôle positif.
+
+cat autourMir133b.fa | blastn -word_size 4 -db sapiens.fa -evalue=0.001 | more
+//3 hits : beaucoup mieux (le meilleur score étant heureusement miR-133b), et on pourrait être encore plus stringeant. -> Contrôle positif OK.
+
+
+//AVEC L'INTÉGRALITÉ DU GÈNE : scn5a.fa
